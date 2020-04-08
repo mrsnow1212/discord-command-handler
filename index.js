@@ -1,11 +1,10 @@
 
 let log = console.log;
-require('dotenv').config()
+
 const chalk = require('chalk');
-const fetch = require('node-fetch')
-//const { prefix } = require('./config');
-const database = require('./data/database')
-const prefix = ["trump","t."];
+
+const { prefix, token } = require('./config');
+
 const { Client, Collection } = require("discord.js");
 const { readdir, lstatSync } = require("fs");
 const client = new Client();
@@ -96,4 +95,4 @@ client.on("message", async message => {
 
 });
 
-client.login(process.env.TOKEN);
+client.login(token);
